@@ -1,12 +1,18 @@
 class MultiRespuesta
-	def initialize
+	attr_reader :preg, :num, :resp
+	attr_writer :preg, :num, :resp
+
+	def initialize(preg,num)
 		@resp = []
+		@num = num
+		@preg = preg
+		#introducir_num
+		#introducir_preg
+		#introducir_resp
 	end
-	def introducir_resp
+	def introducir_resp(resp[])
 		for i in 0..(@num.to_i - 1)
-			puts"Introduzca la respuesta #{i+1}:"
-			STDOUT.flush 
-			@resp[i] = gets.chomp  
+			@resp[i] = resp[i]
 		end
 	end
 	def introducir_num
