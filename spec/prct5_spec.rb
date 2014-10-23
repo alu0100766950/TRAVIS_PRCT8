@@ -9,6 +9,7 @@ describe MultiRespuesta do
 	describe "#Introducir pregunta" do
 		it "Introduccion de pregunta correcto" do
 			@multi.preg.should eq("Como me llamo")
+		end
 	end
 	describe "#Introducir numero de respuestas" do
 		it "Numero de respuestas correctas" do
