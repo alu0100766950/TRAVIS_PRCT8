@@ -1,30 +1,17 @@
 class MultiRespuesta
-	attr_reader :preg, :num, :resp
-	attr_writer :preg, :num, :resp
+	attr_reader :preg, :num, :resp, :correcta
+	attr_writer :preg, :num, :resp, :correcta
 
 	def initialize(preg,num,correcta)
 		@resp = []
 		@num = num
 		@preg = preg
 		@correcta = correcta
-		#introducir_num
-		#introducir_preg
-		#introducir_resp
 	end
-	def introducir_resp(resp[])
+	def introducir_resp(resp)
 		for i in 0..(@num.to_i - 1)
 			@resp[i] = resp[i]
 		end
-	end
-	def introducir_num
-		puts"Introduzca el numero de respuestas que tendra su test:"	
-		STDOUT.flush 
-		@num = gets.chomp
-	end
-	def introducir_preg
-			puts"Introduzca su pregunta:"
-			STDOUT.flush 
-			@preg = gets.chomp  
 	end
 	def to_s
 		puts "#{@preg}?"
@@ -41,8 +28,3 @@ class MultiRespuesta
 		end
 	end
 end
-
-system("clear")
-a = MultiRespuesta.new
-system("clear")
-a.to_s

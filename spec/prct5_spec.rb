@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'prct5'
-require "lib/multirespuesta.rb"
+require "~/Documentos/Asignaturas/Ruby/multirespuesta/prct5/lib/multirespuesta.rb"
 
 describe MultiRespuesta do
 	before :each do
@@ -21,7 +21,6 @@ describe MultiRespuesta do
 			@multi.correcta.should eq(3)
 		end
 	end
-end
 	describe "#Introducir resuestas" do
 		it"Respuestas correctas" do
 			resp = ["Paco", "Pedro", "Carlos", "Adexe"]
@@ -29,14 +28,14 @@ end
 			@multi.resp.should eq(["Paco", "Pedro", "Carlos", "Adexe"])
 		end
 	end
-	describe "#¿Respuesta correcta? si" do
+	describe "#Respuesta correcta? si" do
 		it "Respuesta correcta (Programa funciona correctamente)" do
-			@multi.coreccion(3).should eq(true)
+			@multi.correccion(3).should eq(true)
 		end
 	end
-	describe "#¿Respuesta correcta? no" do
+	describe "#Respuesta correcta? no" do
 		it "Respuesta incorrecta (Programa funciona correctamente)" do
-			@multi.coreccion(2).should eq(false)
+			@multi.correccion(2).should eq(false)
 		end
 	end
 end
