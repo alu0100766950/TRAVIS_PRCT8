@@ -38,4 +38,21 @@ describe MultiRespuesta do
 			@multi.correccion(2).should eq(false)
 		end
 	end
+	describe "#Existen getters?" do
+		it "Responde al getter de preg" do
+			@multi.respond_to?("preg").should eq(true)
+		end
+		it "Responde al getter de resp" do
+			@multi.respond_to?("resp").should eq(true)
+		end
+		it "Responde al getter de num" do
+			@multi.respond_to?("num").should eq(true)
+		end
+		it "Responde al getter de correcta" do
+			@multi.respond_to?("correcta").should eq(true)
+		end
+		it "Responde al getter de introducir_resp" do
+			@multi.respond_to?("introducir_resp").should eq(true)
+		end
+	end
 end
