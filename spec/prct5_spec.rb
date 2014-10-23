@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'prct5'
-require "~/Documentos/Asignaturas/Ruby/multirespuesta/prct5/lib/multirespuesta.rb"
+require "multirespuesta.rb"
 
 describe MultiRespuesta do
 	before :each do
