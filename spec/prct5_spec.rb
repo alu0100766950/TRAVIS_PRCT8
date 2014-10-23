@@ -4,7 +4,7 @@ require "lib/multirespuesta.rb"
 
 describe MultiRespuesta do
 	before :each do
-		@multi = MultiRespuesta.new("Como me llamo",4)
+		@multi = MultiRespuesta.new("Como me llamo",4,3)
 	end
 	describe "#Introducir pregunta" do
 		it "Introduccion de pregunta correcto" do
@@ -16,5 +16,21 @@ describe MultiRespuesta do
 			@multi.num.should eq(4)
 		end
 	end
-
+	describe "#Introducir resuestas" do
+		it"Respuestas correctas" do
+			resp = ["Paco", "Pedro", "Carlos", "Adexe"]
+			@multi.introducir_resp(resp)
+			@multi.resp.should eq(["Paco", "Pedro", "Carlos", "Adexe"])
+		end
+	end
+	describe "#¿Respuesta correcta?" do
+		it "Respuesta correcta (Programa funciona correctamente)" do
+			@multi.coreccion(3).should eq(true)
+		end
+	end
+	describe "#¿Respuesta correcta?" do
+		it "Respuesta incorrecta (Programa funciona correctamente)" do
+			@multi.coreccion(2).should eq(false)
+		end
+	end
 end
