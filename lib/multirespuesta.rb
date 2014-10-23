@@ -2,11 +2,7 @@ class MultiRespuesta
 	attr_reader :preg, :num, :resp
 	attr_writer :preg, :num, :resp
 
-<<<<<<< HEAD
-	def initialize(preg,num, correcta)
-=======
 	def initialize(preg,num,correcta)
->>>>>>> 1e6c6af71348928439c74d2cf7c06f8ce791033b
 		@resp = []
 		@num = num
 		@preg = preg
