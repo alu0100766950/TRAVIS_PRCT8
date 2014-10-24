@@ -5,3 +5,17 @@ $:.unshift File.dirname(__FILE__) + 'lib'
     RSpec::Core::RakeTask.new
     task :default => :spec
 
+task :spec do
+sh "rspec -I. spec/prct5_spec.rb"
+end
+
+task :doc do
+sh "rspec -I. spec/prct5_spec.rb --format documentation"
+end
+
+desc"Salida con formato html"
+task :html do
+sh "rspec -I. spec/prct5_spec.rb --format html --out report.html"
+end
+
+
