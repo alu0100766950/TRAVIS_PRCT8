@@ -13,13 +13,19 @@ class MultiRespuesta
 			@resp[i] = resp[i]
 		end
 	end
+#	def to_s
+#		puts "#{@preg}?"
+#		for i in 0..(@num.to_i - 1)
+#			puts"#{i+1})#{@resp[i]}"
+#		end
+#		print "Introduzca su respuesta"
+#	end 
 	def to_s
 		puts "#{@preg}?"
-		for i in 0..(@num.to_i - 1)
+		[0..(@num.to_i -1)].each do 
 			puts"#{i+1})#{@resp[i]}"
 		end
-		print "Introduzca su respuesta"
-	end 
+	end
 	def correccion(respuesta_usuario)
 		if(respuesta_usuario == @correcta)
 			return true
