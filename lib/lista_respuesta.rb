@@ -34,6 +34,6 @@ describe MultiRespuesta do
 		end
 		@lista = ListaEnlazada.new(@resp)
 	end
-
+end
 	#@lista sería una lista con todas las preguntas y respuestas introducidas en formato MultiRespuesta
 	#Hay que aplicar to_s para que lo que le llegue a ListaEnlazada sea un array de valores, aunque estos valores sean strings enormes
