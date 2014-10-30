@@ -1,10 +1,10 @@
 require 'spec_helper'
-require "multirespuesta.rb"
+require "preg2.rb"
 
 #Prueba ejercicio 1
-describe MultiRespuesta do
+describe Xyz do
 	before :each do
-		@resp = MultiRespuesta.new()
+		@resp = Xyz.new()
 	end
 	describe "Salida apartado 1" do
 		it "Valor de apartado 1 correcto" do
@@ -14,6 +14,15 @@ describe MultiRespuesta do
 end
 
 #Prueba ejercicio 2
+describe "Prueba hash raro" do
+	it "Hash raro es correcto" do
+		hash_raro = {
+			[1, 2, 3] => Object.new(),
+			Hash.new => :toto
+		}
+		hash_raro.should eq("{[1, 2, 3]=>#<Object:0x00000000e96678>, {}=>:toto}")
+	end
+end
 
 
 #Prueba ejercicio 3
@@ -29,7 +38,16 @@ describe Array do
 end
 
 #Prueba ejercicio 4
-	#modificación hecha en el fichero preg1.rb... ¿es?
+describe Objecto do
+	before :each do
+		@Objeto = Objeto.new()
+	end
+	describe "Salida apartado 4" do
+		it "Valor de apartado 4 correcto" do
+			@Objeto.class.should eq("Class")
+		end
+	end
+end	
 
 #Prueba ejercicio 5
-#¿?¿?
+
