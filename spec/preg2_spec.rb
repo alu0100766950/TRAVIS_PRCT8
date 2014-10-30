@@ -1,10 +1,10 @@
 require 'spec_helper'
-require "lib/preg2.rb"
+require "multirespuesta.rb"
 
 #Prueba ejercicio 1
-describe Xyz do
+describe MultiRespuesta do
 	before :each do
-		@resp = Xyz.new()
+		@resp = MultiRespuesta.new()
 	end
 	describe "Salida apartado 1" do
 		it "Valor de apartado 1 correcto" do

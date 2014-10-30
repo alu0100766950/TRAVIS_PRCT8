@@ -1,5 +1,5 @@
 require 'spec_helper'
-require "lib/lista_enlazada.rb"
+require "lista_enlazada.rb"
 
 describe ListaEnlazada do
 	before :each do
@@ -17,32 +17,25 @@ describe ListaEnlazada do
 			@nodo1.siguiente.should eq(@nodo2)
 		end
 	end
-	describe "Extracción de ultimo elemento de la lista" do
-		it "Extracción correcta" do
-			@lista.pop_fin.should eq(7)
+	describe "Insercion de varios elementos" do
+		it "Insercion multiple correcta" do
+			
 		end
 	end
-	describe "Extracción del primer elemento de la lista" do
-		it "Extracción correcta" do
-			@lista.pop_ini.should eq(3)
+	describe "Insercion de un elemento" do
+		it "Insercion simple correcta" do
+			
 		end
 	end
-	describe "Inserción de elemento por el inicio" do
-		it "Elemento insertado correctamente" do
-			@lista.push_ini(8).should eq(true)
+	describe "Extraccion de un elemento" do
+		it "Extraccion simple correcta" do
+			
 		end
 	end
-	describe "Inserción de elemento por el final" do
-		it "Elemento insertado correctamente" do
-			@lista.push_fin(6).should eq(true)
-		end
-	end
-	describe "Inserción de varios elementos" do
-		it "Inserción multiple correcta" do
-			@lista.push_m([9,7,4]).should eq(true)
-		end
-	end
+	
 	describe "Consulta de cabeza" do
 		it "Consulta de cabeza correcta" do
 			@lista.head.should eq(3)
+		end
+	end
 end
