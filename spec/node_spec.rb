@@ -6,7 +6,7 @@ describe ListaEnlazada do
 		a = [3,5,6,7]
 		@nodo2 = Nodo.new(5,nil)
 		@nodo1 = Nodo.new(3,@nodo2)
-		@lista = ListaEnlazada.new(a)
+		@lista = ListaEnlazada.new(3)
 	end
 	describe "Valor de nodo1 = 3" do
 		it "Valor de nodo1 correcto" do

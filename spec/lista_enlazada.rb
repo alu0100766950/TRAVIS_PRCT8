@@ -29,8 +29,8 @@ class ListaEnlazada
 			aux = Nodo.new(val,@head)
 			@head = aux
 		elsif val.kind_of? Array
-			(0..val.length).each do |i|
-				aux = Nodo.new(val(i),@head)
+			(0..(val.length)).each do |i|
+				aux = Nodo.new(val[i],@head)
 				@head = aux
 			end
 		end

@@ -2,17 +2,17 @@ require 'spec_helper'
 require "preg2.rb"
 
 #Prueba ejercicio 1
-describe Xyz do
-	before :each do
-		@resp = Xyz.new()
-	end
-	describe "Salida apartado 1" do
-		it "Valor de apartado 1 correcto" do
-			@resp.should eq(nil)
-		end
-	end
-end
-
+#describe Xyz do
+#	before :each do
+#		@resp = Xyz.new()
+#	end
+#	describe "Salida apartado 1" do
+#		it "Valor de apartado 1 correcto" do
+#			@resp.should eq(nil)
+#		end
+#	end
+#end
+#
 #Prueba ejercicio 2
 #describe "Prueba hash raro" do
 #	it "Hash raro es correcto" do
