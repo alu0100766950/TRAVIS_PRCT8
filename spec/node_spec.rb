@@ -19,17 +19,18 @@ describe ListaEnlazada do
 	end
 	describe "Insercion de varios elementos" do
 		it "Insercion multiple correcta" do
-			
+			a = [1,2,3]
+			@nodo1.push(a).should eq(true)
 		end
 	end
 	describe "Insercion de un elemento" do
 		it "Insercion simple correcta" do
-			
+			@nodo1.push(1).should eq(true)
 		end
 	end
 	describe "Extraccion de un elemento" do
 		it "Extraccion simple correcta" do
-			
+			@nodo1.pop.should eq(3)
 		end
 	end
 	
