@@ -3,8 +3,8 @@ require "lista_enlazada.rb"
 
 describe ListaEnlazada do
 	before :each do
-		@nodo1 = Struct.new(3,@nodo2)
-		@nodo2 = Struct.new(5,nil)
+		@nodo2 = Nodo.new(5,nil)
+		@nodo1 = Nodo.new(3,@nodo2)
 		@lista = ListaEnlazada.new([3,5,6,7])
 	end
 	describe "Valor de nodo1 = 3" do
@@ -14,7 +14,7 @@ describe ListaEnlazada do
 	end
 	describe "Nodo siguiente a nodo1 = nodo2" do
 		it "Nodo siguiente correcto" do
-			@nodo1.siguiente.should eq(@nodo2)
+			@nodo1.siguiente.should eq(@nodo1)
 		end
 	end
 	describe "Insercion de varios elementos" do
@@ -33,7 +33,6 @@ describe ListaEnlazada do
 			@nodo1.pop.should eq(3)
 		end
 	end
-	
 	describe "Consulta de cabeza" do
 		it "Consulta de cabeza correcta" do
 			@lista.head.should eq(3)

@@ -1,11 +1,21 @@
 require 'multirespuesta.rb'
 
-Nodo = Struct.new(:val,:siguiente)
+#Nodo = Struct.new(:val,:siguiente)
+
+class Nodo
+	attr_reader :val, :siguiente
+	attr_writer :val, :siguiente
+	def initialize (val,sig)
+		@val = val
+		@siguiente = sig
+	end
+end
+
 
 class ListaEnlazada
 	attr_reader :head, :tail
 	attr_writer :head, :tail
-	def initializer (vector)
+	def initialize (vector)
 		@head = Nodo.new(vector[0],nil)
 		aux = Nodo.new(vector[1],nil)
 		@head.siguiente = aux
@@ -21,7 +31,7 @@ class ListaEnlazada
 		return aux
 	end
 	def push (val)
-		aux = Nodo.new(val,nil)
+		aux = Nodo.new(val,@head)
 		aux.siguiente = @head
 		@head.siguiente = @head
 		@head = aux
@@ -32,6 +42,6 @@ class ListaEnlazada
 			aux.siguiente = @head
 			@head.siguiente = @head
 			@head = aux
-
+		end
 	end
 end

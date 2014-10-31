@@ -14,15 +14,15 @@ describe Xyz do
 end
 
 #Prueba ejercicio 2
-describe "Prueba hash raro" do
-	it "Hash raro es correcto" do
-		hash_raro = {
-			[1, 2, 3] => Object.new(),
-			Hash.new => :toto
-		}
-		hash_raro.should eq("{[1, 2, 3]=>#<Object:0x00000000e96678>, {}=>:toto}")
-	end
-end
+#describe "Prueba hash raro" do
+#	it "Hash raro es correcto" do
+#		hash_raro = {
+#			[1, 2, 3] => Object.new(),
+#			Hash.new => :toto
+#		}
+#		hash_raro.should eq("{[1, 2, 3]=>#<Object:0x00000000e96678>, {}=>:toto}")
+#	end
+#end
 
 
 #Prueba ejercicio 3
@@ -32,19 +32,19 @@ describe Array do
 	end
 	describe "Salida apartado 3" do
 		it "Valor de apartado 3 correcto" do
-			@Array.say_hi.should eq("Hey!")
+			@Array.say_hi.should eq("HEY!")
 		end
 	end
 end
 
 #Prueba ejercicio 4
-describe Objecto do
+describe Objeto do
 	before :each do
 		@Objeto = Objeto.new()
 	end
 	describe "Salida apartado 4" do
 		it "Valor de apartado 4 correcto" do
-			@Objeto.class.should eq("Class")
+			@Objeto.class.should eq(Objeto)
 		end
 	end
 end	
