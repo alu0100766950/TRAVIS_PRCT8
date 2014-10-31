@@ -1,6 +1,6 @@
 require 'multirespuesta.rb'
 
-Nodo = Struct.new(:val,:siguiente) < MultiRespuesta
+Nodo = Struct.new(:val,:siguiente)
 
 class ListaEnlazada
 	attr_reader :head, :tail
