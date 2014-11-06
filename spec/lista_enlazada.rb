@@ -19,8 +19,7 @@ class ListaEnlazada
 	def initialize (entrada)
 		@head = Nodo.new(nil,nil,nil)
 		@tail = Nodo.new(nil,nil,nil)
-		push(entrada)
-
+		push_i(entrada)
 	end
 	def pop
 		aux = @head.val
