@@ -3,7 +3,8 @@ require 'multirespuesta.rb'
 #Nodo = Struct.new(:val,:siguiente)
 
 class Nodo
-	attr_accessor :val, :siguiente, :prev
+	attr_reader :val, :siguiente, :prev
+	attr_writer :val, :siguiente, :prev
 	
 	def initialize (val,sig,prev)
 		@val = val
@@ -13,9 +14,10 @@ class Nodo
 end
 
 class ListaEnlazada
-	attr_accessor :head, :tail
+	attr_reader :head, :tail
+	attr_writer :head, :tail
 	def initialize (entrada)
-		@head = Nodo.new(nil,nil)
+		@head = Nodo.new(nil,nil,nil)
 		push(entrada)
 
 	end
@@ -31,12 +33,12 @@ class ListaEnlazada
 	end
 	def push (val)
 		if val.kind_of? Fixnum
-			aux = Nodo.new(val,nil)
+			aux = Nodo.new(val,nil,nil)
 			@tail.siguiente = aux
 			@tail = aux
 		elsif val.kind_of? Array
 			(0..(val.length)).each do |i|
-				aux = Nodo.new(val[i],nil)
+				aux = Nodo.new(val[i],nil,nil)
 				@tail.siguiente = aux
 				@tail = aux
 			end
@@ -45,12 +47,12 @@ class ListaEnlazada
 	end
 	def push_i (val)
 		if val.kind_of? Fixnum
-			aux = Nodo.new(val,nil)
+			aux = Nodo.new(val,nil,nil)
 			@head.prev = aux
 			@head = aux
 		elsif val.kind_of? Array
 			(0..(val.length)).each do |i|
-				aux = Nodo.new(val[i],nil)
+				aux = Nodo.new(val[i],nil,nil)
 				@head.prev = aux
 				@head = aux
 			end

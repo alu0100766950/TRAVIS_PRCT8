@@ -9,6 +9,5 @@ class VerdaderoFalso < MultiRespuesta
 		puts "#{@preg}?"
 		puts "1)Verdadero"
 		puts "2)Falso"
-		end
 	end
 end

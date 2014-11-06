@@ -1,4 +1,4 @@
-require 'verdadero_falso.rb'
+require "verdadero_falso.rb"
 
 describe VerdaderoFalso do
 	before :each do
@@ -15,12 +15,12 @@ describe VerdaderoFalso do
 		end
 	end
 	describe "Respuesta incorrecta captada?" do
-		if "Respuesta incorrecta reconocida" do
+		it "Respuesta incorrecta reconocida" do
 			@vf.correccion(true).should eq(false)
 		end
 	end
 	describe "Respuesta correcta captada?" do
-		if "Respuesta correcta reconocida" do
+		it "Respuesta correcta reconocida" do
 			@vf.correccion(false).should eq(true)
 		end
 	end
