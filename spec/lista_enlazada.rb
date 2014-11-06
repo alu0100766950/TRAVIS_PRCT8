@@ -18,6 +18,7 @@ class ListaEnlazada
 	attr_writer :head, :tail
 	def initialize (entrada)
 		@head = Nodo.new(nil,nil,nil)
+		@tail = Nodo.new(nil,nil,nil)
 		push(entrada)
 
 	end

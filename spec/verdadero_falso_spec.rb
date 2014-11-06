@@ -11,7 +11,7 @@ describe VerdaderoFalso do
 	end
 	describe "Respuesta usuario" do
 		it "Respuesta captada" do
-			@vf.resp.should eq(false)
+			@vf.correcta.should eq(false)
 		end
 	end
 	describe "Respuesta incorrecta captada?" do
