@@ -1,7 +1,13 @@
 class MultiRespuesta
+	include Comparable
 	attr_reader :preg, :num, :resp, :correcta
 	attr_writer :preg, :num, :resp, :correcta
-
+	def <=> (anOther)
+		@num <=> anOther.num
+	end
+	def == (anOther)
+		@preg == anOther.preg
+	end
 	def initialize(preg,num,correcta)
 		@resp = []
 		@num = num
