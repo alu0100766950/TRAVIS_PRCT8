@@ -9,7 +9,9 @@ class Nodo
 	def <=> (anOther)
 		@val <=> anOther.val
 	end
-
+#	def each (anOther)
+#		@lv each anOther.lv
+#	end
 	def initialize (val,sig,prev)
 		@val = val
 		@siguiente = sig

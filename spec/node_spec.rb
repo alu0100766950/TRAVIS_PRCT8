@@ -39,38 +39,61 @@ describe ListaEnlazada do
 			@lista.head.val.should eq(3)
 		end
 	end
-	#module Enumerable
+end
+#module Enumerable
 #By default is included in Array class
 describe "Enumerable" do
 	it "Funciona each" do
-		
 		@lista.each{ |i| puts i}.should eq([1,2,3,4,5,6])
+	end
+	it "Funciona collect" do
+		@lista.collect{ |i| i.to_s + "x"}.should eq(['1x','2x','3x','4x','5x','6x'])
+	end
+	it "Funciona detect" do
+		@lista.detect{ |i| i.between?(2,3)}.should eq(2)
+	end
+	it "Funciona select" do
+		@lista.select{ |i| i.between?(3,5)}.should eq([3,4,5])
+	end
+	it "Funciona sort" do
+		@lista.sort.should eq([1,2,3,4,5,6])
+	end
+	it "Funciona max" do
+		@lista.max.should eq([6])
+	end
+	it "Funciona min" do
+		@lista.min.should eq ([1])
 	end
 end
 
+#describe "prueba" do
+#module Enumerable
+#By default is included in Array class
+#r = [1,2,3,4,5,6].each{ |i| puts i}
+#
 #puts r
-
-r = [1,2,3,4,5,6].collect{ |i| i.to_s + "x"}
-
-puts r
-
-r = [1,2,3,4,5,6].detect{ |i| i.between?(2,3)}
-
-puts r
-
-r = [1,2,3,4,5,6].select{ |i| i.between?(3,5)}
-
-puts r
-
-r = [2,1,6,5,4,3].sort
-
-puts r
-
-r = [2,1,6,5,4,3].max
-
-puts r
-
-r = [2,1,6,5,4,3].min
-
-puts r
-end
+#
+#r = [1,2,3,4,5,6].collect{ |i| i.to_s + "x"}
+#
+#puts r
+#
+#r = [1,2,3,4,5,6].detect{ |i| i.between?(2,3)}
+#
+#puts r
+#
+#r = [1,2,3,4,5,6].select{ |i| i.between?(3,5)}
+#
+#puts r
+#
+#r = [2,1,6,5,4,3].sort
+#
+#puts r
+#
+#r = [2,1,6,5,4,3].max
+#
+#puts r
+#
+#r = [2,1,6,5,4,3].min
+#
+#puts r
+#end
