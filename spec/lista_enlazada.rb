@@ -3,9 +3,13 @@ require 'multirespuesta.rb'
 #Nodo = Struct.new(:val,:siguiente)
 
 class Nodo
+	include Enumerable
 	attr_reader :val, :siguiente, :prev
 	attr_writer :val, :siguiente, :prev
-	
+	def <=> (anOther)
+		@val <=> anOther.val
+	end
+
 	def initialize (val,sig,prev)
 		@val = val
 		@siguiente = sig

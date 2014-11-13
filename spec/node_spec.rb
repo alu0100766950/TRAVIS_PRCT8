@@ -39,4 +39,38 @@ describe ListaEnlazada do
 			@lista.head.val.should eq(3)
 		end
 	end
+	#module Enumerable
+#By default is included in Array class
+describe "Enumerable" do
+	it "Funciona each" do
+		
+		@lista.each{ |i| puts i}.should eq([1,2,3,4,5,6])
+	end
+end
+
+#puts r
+
+r = [1,2,3,4,5,6].collect{ |i| i.to_s + "x"}
+
+puts r
+
+r = [1,2,3,4,5,6].detect{ |i| i.between?(2,3)}
+
+puts r
+
+r = [1,2,3,4,5,6].select{ |i| i.between?(3,5)}
+
+puts r
+
+r = [2,1,6,5,4,3].sort
+
+puts r
+
+r = [2,1,6,5,4,3].max
+
+puts r
+
+r = [2,1,6,5,4,3].min
+
+puts r
 end
