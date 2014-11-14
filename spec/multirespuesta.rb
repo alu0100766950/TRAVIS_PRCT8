@@ -6,7 +6,7 @@ class MultiRespuesta
 		@num <=> anOther.num
 	end
 	def == (anOther)
-		@preg == anOther.preg
+		@num == anOther.num && @preg == anOther.preg
 	end
 	def initialize(preg,num,correcta)
 		@resp = []

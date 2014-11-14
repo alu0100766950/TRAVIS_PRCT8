@@ -1,5 +1,5 @@
 require 'spec_helper'
-require "lista_enlazada.rb"
+require 'lista_enlazada.rb'
 
 describe ListaEnlazada do
 	before :each do
@@ -40,29 +40,21 @@ describe ListaEnlazada do
 		end
 	end
 end
-#module Enumerable
-#By default is included in Array class
-describe "Enumerable" do
-	it "Funciona each" do
-		@lista.each{ |i| puts i}.should eq([1,2,3,4,5,6])
-	end
-	it "Funciona collect" do
-		@lista.collect{ |i| i.to_s + "x"}.should eq(['1x','2x','3x','4x','5x','6x'])
-	end
-	it "Funciona detect" do
-		@lista.detect{ |i| i.between?(2,3)}.should eq(2)
-	end
-	it "Funciona select" do
-		@lista.select{ |i| i.between?(3,5)}.should eq([3,4,5])
-	end
-	it "Funciona sort" do
-		@lista.sort.should eq([1,2,3,4,5,6])
-	end
-	it "Funciona max" do
-		@lista.max.should eq(6)
-	end
-	it "Funciona min" do
-		@lista.min.should eq (1)
+
+module Enumerable
+	describe "Enumerable" do
+		it "Funciona collect" do
+			@lista.collect{ |i| i.to_s + "x"}.should eq('3x')
+		end
+		it "Funciona sort" do
+			@lista.sort.should eq(3)
+		end
+		it "Funciona max" do
+			@lista.max.should eq(3)
+		end
+		it "Funciona min" do
+			@lista.min.should eq (3)
+		end
 	end
 end
 

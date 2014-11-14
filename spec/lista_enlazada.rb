@@ -1,5 +1,3 @@
-require 'multirespuesta.rb'
-
 #Nodo = Struct.new(:val,:siguiente)
 
 class Nodo
@@ -13,17 +11,17 @@ class Nodo
 end
 
 class ListaEnlazada
+	include Enumerable
 	attr_reader :head, :tail
 	attr_writer :head, :tail
-	include Enumerable
+
 	def <=> (anOther)
 		@actual.val <=> anOther.actual.val
 	end
 	def each
-		for i in 0..@@size do
-			aux = @actual.siguiente
+		while @actual != nil do
+			yield @actual.val
 			@actual = @actual.siguiente
-			@actual.siguiente = aux.siguiente
 		end
 		@actual = @head
 	end
@@ -50,12 +48,14 @@ class ListaEnlazada
 	def push (val)
 		if val.kind_of? Fixnum
 			aux = Nodo.new(val,nil,nil)
+			aux.prev = @tail
 			@tail.siguiente = aux
 			@tail = aux
 			@@size = @@size + 1 
 		elsif val.kind_of? Array
 			(0..(val.length)).each do |i|
 				aux = Nodo.new(val[i],nil,nil)
+				aux.prev = @tail
 				@tail.siguiente = aux
 				@tail = aux
 				@@size = @@size + 1
@@ -66,15 +66,29 @@ class ListaEnlazada
 	def push_i (val)
 		if val.kind_of? Fixnum
 			aux = Nodo.new(val,nil,nil)
+			aux.siguiente = @head
 			@head.prev = aux
 			@head = aux
+			@@size = @@size + 1
 		elsif val.kind_of? Array
 			(0..(val.length)).each do |i|
 				aux = Nodo.new(val[i],nil,nil)
+				aux.siguiente = @head
 				@head.prev = aux
 				@head = aux
+				@@size = @@size + 1
 			end
 		end
 		return true
 	end
+	def print
+		while @actual != nil
+			puts @actual.val
+			@actual = @actual.siguiente
+		end
+		@actual = @head
+	end
 end
+
+lista = ListaEnlazada.new([1,2,3,4])
+lista.print
