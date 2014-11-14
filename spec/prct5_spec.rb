@@ -56,7 +56,7 @@ describe MultiRespuesta do
 			@multi.respond_to?("introducir_resp").should eq(true)
 		end
 	end
-	describe "Enumerable" do
+	describe "Comparable" do
 		it "Mas respuestas" do
 			a = @multi > @multi2
 			a.should eq(true)

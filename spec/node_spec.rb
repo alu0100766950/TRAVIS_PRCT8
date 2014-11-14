@@ -59,10 +59,10 @@ describe "Enumerable" do
 		@lista.sort.should eq([1,2,3,4,5,6])
 	end
 	it "Funciona max" do
-		@lista.max.should eq([6])
+		@lista.max.should eq(6)
 	end
 	it "Funciona min" do
-		@lista.min.should eq ([1])
+		@lista.min.should eq (1)
 	end
 end
 
