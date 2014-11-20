@@ -36,13 +36,13 @@ class ListaEnlazada
 	def pop
 		aux = @head.val
 		@head = @head.siguiente
-		@size = @@size-1
+		@size = @size-1
 		return aux
 	end
 	def pop_f
 		aux = @tail.val
 		@tail = @tail.siguiente
-		@size = @@size-1
+		@size = @size-1
 		return aux
 	end
 	def push (val)
@@ -52,19 +52,19 @@ class ListaEnlazada
 				aux.prev = @tail
 				@tail.siguiente = aux
 				@tail = aux
-				@size = @@size + 1
+				@size = @size + 1
 			end
 		else
 			aux = Nodo.new(val,nil,nil)
 			aux.prev = @tail
 			@tail.siguiente = aux
 			@tail = aux
-			@size = @@size + 1 
+			@size = @size + 1 
 		end
 		return true
 	end
 	def push_i (val)
-		if val.kind_of? Array
+		if val.instance_of? Array
 			(0..(val.length)).each do |i|
 				aux = Nodo.new(val[i],nil,nil)
 				aux.siguiente = @head

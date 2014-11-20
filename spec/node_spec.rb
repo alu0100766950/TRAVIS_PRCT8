@@ -41,22 +41,22 @@ describe ListaEnlazada do
 	end
 end
 
-module Enumerable
-	describe "Enumerable" do
-		it "Funciona collect" do
-			@lista.collect{ |i| i.to_s + "x"}.should eq('3x')
-		end
-		it "Funciona sort" do
-			@lista.sort.should eq(3)
-		end
-		it "Funciona max" do
-			@lista.max.should eq(3)
-		end
-		it "Funciona min" do
-			@lista.min.should eq (3)
-		end
-	end
-end
+#module Enumerable
+#	describe "Enumerable" do
+#		it "Funciona collect" do
+#			@lista.collect{ |i| i.to_s + "x"}.should eq('3x')
+#		end
+#		it "Funciona sort" do
+#			@lista.sort.should eq(3)
+#		end
+#		it "Funciona max" do
+#			@lista.max.should eq(3)
+#		end
+#		it "Funciona min" do
+#			@lista.min.should eq (3)
+#		end
+#	end
+#end
 
 #describe "prueba" do
 #module Enumerable

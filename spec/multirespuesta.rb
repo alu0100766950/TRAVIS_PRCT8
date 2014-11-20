@@ -28,7 +28,7 @@ class MultiRespuesta
 #	end 
 	def to_s
 		puts "#{@preg}?"
-		[0..(@num.to_i -1)].each do
+		for i in 0..@num-1 do
 			puts"#{i+1})#{@resp[i]}"
 		end
 	end

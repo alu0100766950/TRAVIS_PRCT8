@@ -3,6 +3,16 @@ require "verdadero_falso.rb"
 require "lista_enlazada.rb"
 
 class Examen < ListaEnlazada
+	def initialize(vector_preguntas)
+		super(vector_preguntas)
+		@respondido = false
+		if vector_preguntas.kind_of? Array
+			@n_preguntas = vector_preguntas.length
+		else
+			@n_preguntas = 1
+		end
+		@respuestas = []
+	end
 	def print
 		while @actual != nil
 			@actual.val.to_s
