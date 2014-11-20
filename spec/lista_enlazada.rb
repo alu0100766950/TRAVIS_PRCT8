@@ -26,7 +26,7 @@ class ListaEnlazada
 		@actual = @head
 	end
 	def initialize (entrada)
-		@@size = 0
+		@size = 0
 		@actual = Nodo.new(nil,nil,nil)
 		@head = Nodo.new(nil,nil,nil)
 		@tail = Nodo.new(nil,nil,nil)
@@ -36,48 +36,48 @@ class ListaEnlazada
 	def pop
 		aux = @head.val
 		@head = @head.siguiente
-		@@size = @@size-1
+		@size = @@size-1
 		return aux
 	end
 	def pop_f
 		aux = @tail.val
 		@tail = @tail.siguiente
-		@@size = @@size-1
+		@size = @@size-1
 		return aux
 	end
 	def push (val)
-		if val.kind_of? Fixnum
-			aux = Nodo.new(val,nil,nil)
-			aux.prev = @tail
-			@tail.siguiente = aux
-			@tail = aux
-			@@size = @@size + 1 
-		elsif val.kind_of? Array
+		if val.kind_of? Array
 			(0..(val.length)).each do |i|
 				aux = Nodo.new(val[i],nil,nil)
 				aux.prev = @tail
 				@tail.siguiente = aux
 				@tail = aux
-				@@size = @@size + 1
+				@size = @@size + 1
 			end
+		else
+			aux = Nodo.new(val,nil,nil)
+			aux.prev = @tail
+			@tail.siguiente = aux
+			@tail = aux
+			@size = @@size + 1 
 		end
 		return true
 	end
 	def push_i (val)
-		if val.kind_of? Fixnum
-			aux = Nodo.new(val,nil,nil)
-			aux.siguiente = @head
-			@head.prev = aux
-			@head = aux
-			@@size = @@size + 1
-		elsif val.kind_of? Array
+		if val.kind_of? Array
 			(0..(val.length)).each do |i|
 				aux = Nodo.new(val[i],nil,nil)
 				aux.siguiente = @head
 				@head.prev = aux
 				@head = aux
-				@@size = @@size + 1
+				@size = @size + 1
 			end
+		else
+			aux = Nodo.new(val,nil,nil)
+			aux.siguiente = @head
+			@head.prev = aux
+			@head = aux
+			@size = @size + 1
 		end
 		return true
 	end
@@ -91,4 +91,5 @@ class ListaEnlazada
 end
 
 lista = ListaEnlazada.new([1,2,3,4])
+lista.push(5)
 lista.print
