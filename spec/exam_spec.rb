@@ -8,7 +8,7 @@ describe Examen do
 		respuestas1 = ["#<Xyz:0xa000208>","nil","0","Ninguna de las anteriores"]
 		@resp = MultiRespuesta.new(pregunta1,4,1)
 		@resp.introducir_resp(respuestas1)
-		@resp = @resp.to_s
+		#@resp = @resp.to_s
 		@Examen = Examen.new(@resp)
 	end
 	describe "pregunta correcta" do
@@ -21,8 +21,5 @@ describe Examen do
 		it "Valor numero respuesta" do
 			@Examen.head.val.num.should eq (4)
 		end
-#		it "Valor respuesta" do
-#			@Examen.head.val.resp.should eq ("#<Xyz:0xa000208>","nil","0","Ninguna de las anteriores")
-#		end
 	end
 end

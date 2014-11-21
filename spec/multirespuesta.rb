@@ -19,13 +19,6 @@ class MultiRespuesta
 			@resp[i] = resp[i]
 		end
 	end
-#	def to_s
-#		puts "#{@preg}?"
-#		for i in 0..(@num.to_i - 1)
-#			puts"#{i+1})#{@resp[i]}"
-#		end
-#		print "Introduzca su respuesta"
-#	end 
 	def to_s
 		puts "#{@preg}?"
 		for i in 0..@num-1 do

@@ -23,14 +23,14 @@ class Interfaz
 			STDOUT.flush
 			a = gets.chomp
 			case a
-			when 1
+			when "1"
 				@exam.print
-			when 2
+			when "2"
 				for i in 0..@n_preguntas do
 					@respuestas[i] = @exam.responder(i)
 				end
 				@respondido = true
-			when 3
+			when "3"
 				a = 0
 				puts "Calificacion"
 				for i in 0..@n_preguntas do

@@ -47,7 +47,8 @@ class ListaEnlazada
 	end
 	def push (val)
 		if val.kind_of? Array
-			(0..(val.length)).each do |i|
+			for i in 0..val.length do
+#			(0..(val.length)).each do |i|
 				aux = Nodo.new(val[i],nil,nil)
 				aux.prev = @tail
 				@tail.siguiente = aux
@@ -65,7 +66,8 @@ class ListaEnlazada
 	end
 	def push_i (val)
 		if val.instance_of? Array
-			(0..(val.length)).each do |i|
+			for i in 0..val.length do
+#			(0..(val.length)).each do |i|
 				aux = Nodo.new(val[i],nil,nil)
 				aux.siguiente = @head
 				@head.prev = aux
@@ -90,6 +92,6 @@ class ListaEnlazada
 	end
 end
 
-lista = ListaEnlazada.new([1,2,3,4])
-lista.push(5)
-lista.print
+#lista = ListaEnlazada.new([1,2,3,4])
+#lista.push(5)
+#lista.print
