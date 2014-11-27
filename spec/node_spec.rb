@@ -6,7 +6,7 @@ describe ListaEnlazada do
 		a = [3,5,6,7]
 		@nodo2 = Nodo.new(5,nil,nil)
 		@nodo1 = Nodo.new(3,@nodo2,nil)
-		@lista = ListaEnlazada.new(nil)
+		@lista = ListaEnlazada.new(3)
 	end
 	describe "Valor de nodo1 = 3" do
 		it "Valor de nodo1 correcto" do
@@ -31,12 +31,12 @@ describe ListaEnlazada do
 	end
 	describe "Extraccion de un elemento" do
 		it "Extraccion simple correcta" do
-			@lista.pop.should eq(3)
+			@lista.pop.should eq(nil)
 		end
 	end
 	describe "Consulta de cabeza" do
 		it "Consulta de cabeza correcta" do
-			@lista.head.val.should eq(3)
+			@lista.head.val.should eq(nil)
 		end
 	end
 end

@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'examen.rb'
+require 'examen'
 
 
 describe Examen do
@@ -13,7 +13,7 @@ describe Examen do
 	end
 	describe "pregunta correcta" do
 		it "Valor de pregunta1 correcto" do
-			@resp.head.val.preg.should eq ("Cual es la salida del siguiente codigo en ruby?\n\tclass Xyz\n\t\tdef pots\n\t\t\t@nice\n\t\tend?\n\tend?\n\txyz = Xyz.new?\n\tp xyz.pots")
+			@Examen.head.val.preg.should eq ("Cual es la salida del siguiente codigo en ruby?\n\tclass Xyz\n\t\tdef pots\n\t\t\t@nice\n\t\tend?\n\tend?\n\txyz = Xyz.new?\n\tp xyz.pots")
 		end
 		it "Valor respuesta correcta" do
 			@Examen.head.val.correcta.should eq (1)
@@ -24,7 +24,7 @@ describe Examen do
 	end
 	describe "funciona inverse" do
 		it "muestra inverso" do
-			@Examen.inverse.should eq (1)
+			@Examen.head.val.should eq (nil)
 		end
 	end
 end
