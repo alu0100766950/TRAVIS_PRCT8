@@ -1,6 +1,6 @@
-require "./multirespuesta.rb"
-require "./verdadero_falso.rb"
-require "./lista_enlazada.rb"
+require 'multirespuesta'
+require 'verdadero_falso'
+require 'lista_enlazada'
 
 class Examen < ListaEnlazada
 	def initialize(vector_preguntas)

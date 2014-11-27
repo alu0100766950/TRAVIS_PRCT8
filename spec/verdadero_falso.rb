@@ -1,4 +1,4 @@
-require "./multirespuesta.rb"
+require 'multirespuesta'
 
 class VerdaderoFalso < MultiRespuesta
 	def initialize (preg,correcta)
