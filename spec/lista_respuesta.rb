@@ -1,5 +1,5 @@
-require "multirespuesta.rb"
-require "lista_enlazada.rb"
+require 'multirespuesta'
+require 'lista_enlazada'
 
 describe MultiRespuesta do
 	before :each do

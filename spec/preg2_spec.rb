@@ -1,5 +1,5 @@
 require 'spec_helper'
-require "preg2.rb"
+require 'preg2'
 
 #Prueba ejercicio 1
 #describe Xyz do

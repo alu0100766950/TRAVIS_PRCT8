@@ -1,12 +1,12 @@
 require 'spec_helper'
-require 'lista_enlazada.rb'
+require 'lista_enlazada'
 
 describe ListaEnlazada do
 	before :each do
 		a = [3,5,6,7]
 		@nodo2 = Nodo.new(5,nil,nil)
 		@nodo1 = Nodo.new(3,@nodo2,nil)
-		@lista = ListaEnlazada.new(3)
+		@lista = ListaEnlazada.new(nil)
 	end
 	describe "Valor de nodo1 = 3" do
 		it "Valor de nodo1 correcto" do

@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'prct5'
-require 'multirespuesta.rb'
+require 'multirespuesta'
 
 describe MultiRespuesta do
 	before :each do

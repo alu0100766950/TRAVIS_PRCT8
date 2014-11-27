@@ -32,7 +32,7 @@ class ListaEnlazada
 		@tail = Nodo.new(nil,nil,nil)
 		@head = @tail
 		@tail = @head
-		push(entrada)
+#		push(entrada)
 
 		@actual = @head
 	end

@@ -1,4 +1,4 @@
-require "verdadero_falso.rb"
+require 'verdadero_falso'
 
 describe VerdaderoFalso do
 	before :each do

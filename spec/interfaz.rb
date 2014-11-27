@@ -1,4 +1,4 @@
-require "examen.rb"
+require 'examen'
 
 class Interfaz
 	def initialize(vector_preguntas)
