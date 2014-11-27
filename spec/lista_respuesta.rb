@@ -30,7 +30,6 @@ describe MultiRespuesta do
 			when 5
 				@resp[i].introducir_resp(respuestas5)
 			end
-			@resp[i] = @resp[i].to_s
 		end
 		@lista = ListaEnlazada.new(@resp)
 	end

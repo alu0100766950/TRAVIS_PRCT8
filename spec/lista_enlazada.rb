@@ -1,5 +1,3 @@
-#Nodo = Struct.new(:val,:siguiente)
-
 class Nodo
 	attr_reader :val, :siguiente, :prev
 	attr_writer :val, :siguiente, :prev
@@ -27,10 +25,15 @@ class ListaEnlazada
 	end
 	def initialize (entrada)
 		@size = 0
+
 		@actual = Nodo.new(nil,nil,nil)
+
 		@head = Nodo.new(nil,nil,nil)
 		@tail = Nodo.new(nil,nil,nil)
-		push_i(entrada)
+		@head = @tail
+		@tail = @head
+		push(entrada)
+
 		@actual = @head
 	end
 	def pop
@@ -46,21 +49,33 @@ class ListaEnlazada
 		return aux
 	end
 	def push (val)
-		if val.kind_of? Array
+		if val.instance_of? Array
 			for i in 0..val.length do
 #			(0..(val.length)).each do |i|
 				aux = Nodo.new(val[i],nil,nil)
-				aux.prev = @tail
+				if((@head == nil) and (@tail == nil))
+					@head = aux
+					@tail = @head
+					@size = @size + 1
+				else
+					@tail.siguiente = aux
+					aux.prev = @tail
+					@tail = aux
+					@size = @size + 1
+				end
+			end
+		else
+			aux = Nodo.new(val[i],nil,nil)
+			if((@head == nil) and (@tail == nil))
+				@head = aux
+				@tail = @head
+				@size = @size + 1
+			else
 				@tail.siguiente = aux
+				aux.prev = @tail
 				@tail = aux
 				@size = @size + 1
 			end
-		else
-			aux = Nodo.new(val,nil,nil)
-			aux.prev = @tail
-			@tail.siguiente = aux
-			@tail = aux
-			@size = @size + 1 
 		end
 		return true
 	end
@@ -69,29 +84,53 @@ class ListaEnlazada
 			for i in 0..val.length do
 #			(0..(val.length)).each do |i|
 				aux = Nodo.new(val[i],nil,nil)
-				aux.siguiente = @head
+				if((@head == nil) and (@tail == nil))
+					@head = aux
+					@tail = @head
+					@size = @size + 1
+				else
+					@head.prev = aux
+					aux.siguiente = @head
+					@head = aux
+					@size = @size + 1
+				end
+			end
+		else
+			aux = Nodo.new(val[i],nil,nil)
+			if((@head == nil) and (@tail == nil))
+				@head = aux
+				@tail = @head
+				@size = @size + 1
+			else
 				@head.prev = aux
+				aux.siguiente = @head
 				@head = aux
 				@size = @size + 1
 			end
-		else
-			aux = Nodo.new(val,nil,nil)
-			aux.siguiente = @head
-			@head.prev = aux
-			@head = aux
-			@size = @size + 1
 		end
 		return true
 	end
-	def print
-		while @actual != nil
-			puts @actual.val
-			@actual = @actual.siguiente
+	def imprime(nodo)
+		if (nodo != nil)
+			print "#{nodo.val} "
+			imprime(nodo.siguiente)
 		end
-		@actual = @head
+	end
+	def forPrint
+		imprime(@head)
+		puts ""
+	end
+	def my_while(condicion, &bloque) 
+		while condicion.call
+			bloque.call
+		end
+	end
+	def inverse
+		aux = @tail
+		my_while -> {aux != nil} do 
+			print "#{aux.val} "
+			aux = aux.prev
+		end
+		puts ""
 	end
 end
-
-#lista = ListaEnlazada.new([1,2,3,4])
-#lista.push(5)
-#lista.print

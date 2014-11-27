@@ -21,7 +21,7 @@ class MultiRespuesta
 	end
 	def to_s
 		puts "#{@preg}?"
-		for i in 0..@num-1 do
+		for i in 0..(@num-1) do
 			puts"#{i+1})#{@resp[i]}"
 		end
 	end
@@ -32,4 +32,5 @@ class MultiRespuesta
 			return false
 		end
 	end
+	
 end

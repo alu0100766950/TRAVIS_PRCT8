@@ -1,6 +1,6 @@
-require "multirespuesta.rb"
-require "verdadero_falso.rb"
-require "lista_enlazada.rb"
+require "./multirespuesta.rb"
+require "./verdadero_falso.rb"
+require "./lista_enlazada.rb"
 
 class Examen < ListaEnlazada
 	def initialize(vector_preguntas)
@@ -27,8 +27,8 @@ class Examen < ListaEnlazada
 		@actual.val.to_s
 		@actual = @head
 	end
-	def responder(val)
-		print_node(val)
+	def responder(value)
+		print_node(value)
 		print "Introduzca su respuesta -> "
 		STDOUT.flush
 		resp = gets.chomp
@@ -36,6 +36,18 @@ class Examen < ListaEnlazada
 			return true
 		else
 			return false
+		end
+	end
+	def my_while(condicion, &bloque) 
+		while condicion.call
+			bloque.call
+		end
+	end
+	def inverse
+		aux = @tail
+		my_while -> {aux != nil} do
+			aux.val.to_s
+			aux = aux.prev
 		end
 	end
 end
