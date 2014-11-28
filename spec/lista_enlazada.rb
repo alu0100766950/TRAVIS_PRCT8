@@ -32,7 +32,7 @@ class ListaEnlazada
 		@tail = Nodo.new(nil,nil,nil)
 		@head = @tail
 		@tail = @head
-#		push(entrada)
+		push(entrada)
 
 		@actual = @head
 	end
@@ -65,7 +65,7 @@ class ListaEnlazada
 				end
 			end
 		else
-			aux = Nodo.new(val[i],nil,nil)
+			aux = Nodo.new(val,nil,nil)
 			if((@head == nil) and (@tail == nil))
 				@head = aux
 				@tail = @head
@@ -96,7 +96,7 @@ class ListaEnlazada
 				end
 			end
 		else
-			aux = Nodo.new(val[i],nil,nil)
+			aux = Nodo.new(val,nil,nil)
 			if((@head == nil) and (@tail == nil))
 				@head = aux
 				@tail = @head

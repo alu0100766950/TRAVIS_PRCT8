@@ -6,9 +6,7 @@ class Interfaz
 		@n_preguntas = vector_preguntas.length
 		@exam = Examen.new(vector_preguntas)
 		@respuestas = []
-
 	end
-
 	def muestra_menu
 		while true do
 			puts "Prueba Examen"

@@ -27,6 +27,15 @@ class Examen < ListaEnlazada
 		@actual.val.to_s
 		@actual = @head
 	end
+	def getCorrecta(node)
+		return node.val.correcta
+	end
+	def getPreg(node)
+		return node.val.preg
+	end
+	def getNum(node)
+		return node.val.num
+	end
 	def responder(value)
 		print_node(value)
 		print "Introduzca su respuesta -> "
@@ -49,5 +58,6 @@ class Examen < ListaEnlazada
 			aux.val.to_s
 			aux = aux.prev
 		end
+		return true
 	end
 end
