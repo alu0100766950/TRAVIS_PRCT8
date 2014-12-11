@@ -1,0 +1,131 @@
+#encoding: utf-8
+#require './preg'
+class Answer
+	attr_accessor :kind, :order, :answer
+	# order:  the position of the answer in the question
+	# kind:   either :right or :wrong
+	# answer: the text of the answer (for instance "1492")
+	def initialize(order, kind, answer)
+		@kind = kind
+		@order = order
+		@answer = answer
+	end
+
+	def to_s
+		"#{@order} -  #{answer}"
+	end
+	# predicate: decides if this is a right answer
+	def is_right?
+		@kind == Quiz::RIGHT
+	end
+	# Answer objects must be sorted according to their position
+	# inside the question
+	def <=>(other)
+		self.order <=> other.order
+	end
+end
+
+class Question
+	ORDER = 0
+	KIND = 1
+	attr_accessor :text, :answers
+	def initialize(text, answers)
+		@text = text
+		# "answers" is a hash.
+		# The keys "k" are pairs like [3, :right] or [6, :wrong]
+		# The first member of the pair ("6") is the answer position, 
+		# the second member (":wrong"),  the kind of answer.
+		# The value "v" is the answer, for instance "1942" or "1492"
+		@answers = answers.map { |k, v| Answer.new(k[ORDER], k[KIND],  v) }.sort
+	end
+
+	def to_s
+		output = <<"EOQ"
+		#{@text}
+		#{
+		out = ""
+		@answers.each do |answer|
+		out << "  #{answer}\n"
+	end
+	out
+	}
+EOQ
+	end
+	# ask the question and returns true if the answer is right
+	# false otherwise
+	def ask
+		begin
+			puts self
+			print "Su respuesta: " 
+			answerno = gets.to_i - 1
+		end while (answerno < 0 or answerno >= @answers.length)
+		@answers[answerno].is_right? 
+	end
+end
+
+class Quiz
+	RIGHT = :right
+	WRONG = :wrong
+
+	attr_accessor :name, :questions 
+
+	def initialize(name = "", &block)
+		self.name = name
+		self.questions = []
+		@counter = 0
+		instance_eval &block
+	end
+	
+	def question(text, answers)
+		q = Question.new(text, answers)
+		questions << q
+#		puts q if $DEBUG
+		@counter = 0
+	end
+
+	def to_s
+		out = <<"EOQUIZ"
+		#{self.name}
+		#{self.questions.join("\n")}
+EOQUIZ
+	end
+
+	def wrong
+		@counter += 1
+		[@counter, WRONG]
+	end
+
+	def right
+		@counter+= 1
+		[@counter, RIGHT]
+	end
+
+	def title(title)
+		@name = title
+	end
+
+	def run
+		counter=0
+		puts self.name+"\n\n"
+		self.questions.each { |q| counter += 1 if q.ask }
+		puts "#{counter} respuestas correctas de un total de #{@questions.size}."
+	end
+end
+
+#=begin
+#if __FILE__ == $0
+	quiz = Quiz.new("Cuestionario de LPP 10/12/2014") do
+		question '¿Cuántos argumentos de tipo bloque puede recibir un método?',
+			right =>'Uno',
+			wrong =>'Dos',
+			wrong =>'Muchos',
+			wrong =>'Los que defina el usuario'
+		question 'En Ruby los bloque son objetos que continen código',
+			wrong =>'Cierto',
+			right =>'Falso'
+	end
+#	puts quiz
+	puts "************************"
+	quiz.run
+#end
+#=end
